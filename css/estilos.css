@@ -1,0 +1,235 @@
+body{
+    font-family: "Prompt", sans-serif;
+    /*background-image: url(images/60.-zircon.jpg);*/
+    background-size:cover; 
+    background-color: rgb(211, 193, 202);
+}/* body: Parte tres luego de responsividad completa*/
+.nav-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10 20 10 20;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 30% auto;
+    /*background-color: red;*/ /*Se quita luego de terminar
+     estilos de nav parte 3: luego de maquetacion final*/
+}
+/*ul y li se maquetarn luego de los contenedores principales*/
+.nav-wrapper ul li {
+    display: inline;
+    list-style-type: none;
+}
+.nav-wrapper a{
+    letter-spacing: .1em;
+    text-decoration: none;
+    font-weight: bold;
+    color:#000;
+}
+.nav-wrapper a:hover{
+    cursor: pointer;
+    color: #eee;
+}/* nav-wrapper a y a:hover: Parte tres luego de responsividad completa*/
+.list-item{
+    margin-left: 10px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+.main-wrapper{
+    max-width: 1200px;
+    margin: auto;
+}
+.burger-icon{
+    display: none;
+}
+.wrapper{
+    max-width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    grid-template-areas: 
+        "featuredMain featuredMain featuredSub"
+        "contentMain contentMain contentSub"
+}
+.wrapper > .featured,
+.wrapper > .sub-featured > div,
+.wrapper> .main-content,
+.wrapper> .main-sidebar{
+    padding: 20px;
+}
+
+.featured{
+    grid-area: featuredMain;
+    min-height: 500px;
+    background: linear-gradient(rgba(0,0,0,.6),
+    rgba(0,0,0,.1)) border-box, 
+    url(https://source.unsplash.com/1600x1900/?technology) no-repeat center center;
+    /*background-color: purple;*//*se elimina luego de insertada imagen en su lugar all final*/
+    display: grid;
+    align-content: flex-end;/* color, display, bacground image y align content se agregan en parte final*/
+    color: #fff;
+}
+.main-content, .featured,
+ .sub-featured > div, .main-sidebar{
+     box-shadow: 0 0 4px rgba(0,0,0,.25);
+ }/* se realiza luego de maquetacion*/
+.featured h1{
+    font-size: 36px;
+    max-width: 650px;
+}/*se realiza luego de maquetacion total*/
+.sub-featured{
+    grid-area: featuredSub;
+    /*background-color: blue;--se elimina en parte final*/
+    display: grid;
+    /*despues de maquetacion principal--
+    para maquetar los elementos div que contiene sub-featured*/
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    color: #fff;
+}
+/* se maquetaron los sub 1 2 y 3 luego de maquetacion contenedores principales*/
+.sub-featured h3{
+    margin-top: 0;
+} /*se realiza luego de maquetacion total*/
+
+.sub1{
+    background: linear-gradient(rgba(0,0,0,.6),
+    rgba(0,0,0,.1)) border-box, 
+    url(https://source.unsplash.com/1600x900/?technology) no-repeat center center;
+    /*background-color: green; se reemplaza por imagen parte final*/
+    background-size: cover;/*se agrega parte final*/
+}
+.sub2{
+    background: linear-gradient(rgba(0,0,0,.6),
+    rgba(0,0,0,.1)) border-box, 
+    url(https://source.unsplash.com/1600x900/?sports) no-repeat center center;
+    /*background-color: green; se reemplaza por imagen parte final*/
+    background-size: cover;/*se agrega parte final*/
+}
+.sub3{
+    background: linear-gradient(rgba(0,0,0,.6),
+    rgba(0,0,0,.1)) border-box, 
+    url(https://source.unsplash.com/1600x900/?women) no-repeat center center;
+    /*background-color: green; se reemplaza por imagen parte final*/
+    background-size: cover;/*se agrega parte final*/
+}
+.main-content{
+    grid-area: contentMain;
+    /*background-color: orange;-- se elimina para reemplazarlo parte final*/
+    background-color: rgba(255,255,255,.35);
+    color: #444;
+    line-height: 1.5em;
+}
+.main-sidebar{
+    grid-area: contentSub;
+    /*background-color: yellow;-- se elimina para reemplazarlo parte final*/
+    background-color: rgba(255,255,255,.35);
+    color: #444;
+    line-height: 1.5em;
+}
+.footer{
+    display: grid;
+    margin: auto;
+    background: linear-gradient(rgba(0,0,0,.6),
+    rgba(0,0,0,.1)) border-box, 
+    url(https://source.unsplash.com/1600x900/?art) no-repeat center center;
+    /*background se agrega en parte final*/
+    background-size: cover;/*se agrega parte final*/
+    grid-template-columns: 
+    minmax(20px,300px)
+    minmax(20px,300px)
+    minmax(20px,300px)
+    minmax(20px,300px);
+    justify-content: center;
+    grid-auto-rows: 1fr 1fr;
+    background-color: #333;
+    color: #fff;
+}
+.footer > div{
+    padding: 20px
+}/*se realiza luego de maquetacion total*/
+.copyright{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    grid-column: 1/-1;
+}
+/* TABLET MEDIA QUERY-- Luego de contenedores principales*/
+@media screen and (max-width:950px){
+    .wrapper{
+        grid-template-areas:
+           "featuredMain featuredMain featuredMain"
+           "featuredSub featuredSub featuredSub"
+           "contentMain contentMain contentSub"
+    }
+    .sub-featured{
+        grid-template-columns:repeat(3,1fr); 
+    }
+    .nav-items{
+        grid-column: 1/5;
+        text-align: center;
+    }
+    .logo{
+        grid-column: 1/5;
+        text-align: center;
+    }
+    .nav-wrapper{
+        margin-top: 0;
+    }
+}
+/* CELLPHONE MEDIA QUERY-- Luego de contenedores principales*/
+
+@media screen and (max-width:690px){
+    .logo{
+        grid-column:1/3;
+    }
+    .nav-items{
+        grid-column: 1/5;
+        text-align: center;
+    }
+    .nav-wrapper ul{
+        padding:0;
+        margin:0;
+    }
+    .nav-wrapper ul li{
+        display: block;
+    }
+    .burger-icon{
+        display: inherit;
+        justify-self: end;
+        grid-column: 4/5;
+        border: 2px solid #333;
+        color: #333;
+        padding: 10px;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+    .burger-icon:hover{
+        cursor: pointer;
+    }
+    .wrapper{
+        grid-template-areas:
+           "featuredMain featuredMain featuredMain"
+           "featuredSub featuredSub featuredSub"
+           "contentMain contentMain contentMain "
+           "contentSub contentSub contentSub"
+    }
+    .sub-featured{
+        grid-template-columns:1fr; 
+    }
+    .footer > div{
+        grid-column: 1/-1;
+    }
+    /*se realiza al final de maquetacion*/
+    .featured h1{
+        font-size: 30px;
+    }
+    .mobile-show{
+        display: block;
+    }
+    .mobile-hide{
+        display: none;
+    }
+}
+
+
